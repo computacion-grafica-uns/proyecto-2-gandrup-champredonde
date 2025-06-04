@@ -122,6 +122,31 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &30911869 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e01193b0238cd63449ab9f8ee9955bb9, type: 3}
+  m_PrefabInstance: {fileID: 1508671611}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &55454650 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e01193b0238cd63449ab9f8ee9955bb9, type: 3}
+  m_PrefabInstance: {fileID: 208571012}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &56255477 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e01193b0238cd63449ab9f8ee9955bb9, type: 3}
+  m_PrefabInstance: {fileID: 215358026}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &92047935 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e01193b0238cd63449ab9f8ee9955bb9, type: 3}
+  m_PrefabInstance: {fileID: 881935285}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &138256405 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e01193b0238cd63449ab9f8ee9955bb9, type: 3}
+  m_PrefabInstance: {fileID: 276137585}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &153131332
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -446,6 +471,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e01193b0238cd63449ab9f8ee9955bb9, type: 3}
+--- !u!1 &219515513 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e01193b0238cd63449ab9f8ee9955bb9, type: 3}
+  m_PrefabInstance: {fileID: 1709349742}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &276137585
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -527,6 +557,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e01193b0238cd63449ab9f8ee9955bb9, type: 3}
+--- !u!1 &359847414 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e01193b0238cd63449ab9f8ee9955bb9, type: 3}
+  m_PrefabInstance: {fileID: 1737586660}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &436198338
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -608,6 +643,16 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e01193b0238cd63449ab9f8ee9955bb9, type: 3}
+--- !u!1 &492139609 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e01193b0238cd63449ab9f8ee9955bb9, type: 3}
+  m_PrefabInstance: {fileID: 1834300845}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &558898077 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e01193b0238cd63449ab9f8ee9955bb9, type: 3}
+  m_PrefabInstance: {fileID: 633835898}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &633835898
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -843,6 +888,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7936024133847426488, guid: e01193b0238cd63449ab9f8ee9955bb9, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 000a7d4da10227b4b9316c59c7a8658e, type: 2}
     - target: {fileID: 919132149155446097, guid: e01193b0238cd63449ab9f8ee9955bb9, type: 3}
       propertyPath: m_Name
       value: Tetera-Blinn-Phong-Mapeo-2D
@@ -852,6 +901,98 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e01193b0238cd63449ab9f8ee9955bb9, type: 3}
+--- !u!1 &766572340 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e01193b0238cd63449ab9f8ee9955bb9, type: 3}
+  m_PrefabInstance: {fileID: 1860592233}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &854367975
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 854367977}
+  - component: {fileID: 854367976}
+  m_Layer: 0
+  m_Name: LightManagerA
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &854367976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 854367975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9abc881c28c3044f9162a3e70001c8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  materiales:
+  - {fileID: 2100000, guid: 52c9c33f65deb32408511a55b9514a0a, type: 2}
+  - {fileID: 2100000, guid: 8c125ecb0502064418eeb7c4b9c632c6, type: 2}
+  - {fileID: 2100000, guid: 063906638cb2b4e4cacd50ec38d79dbf, type: 2}
+  - {fileID: 2100000, guid: 000a7d4da10227b4b9316c59c7a8658e, type: 2}
+  - {fileID: 2100000, guid: df84236bd103df54cab610fe65a0f888, type: 2}
+  - {fileID: 2100000, guid: 7b3a57a431e88a44f91111c062ae5146, type: 2}
+  - {fileID: 2100000, guid: e1d379fb9e0dc6742af8d1021a0bfc66, type: 2}
+  DirLightColor: {x: 0.5, y: 0.5, z: 0.5}
+  DirLightDirection: {x: 0, y: 0, z: -1}
+  SpotLightColor: {x: 0.6, y: 0.6, z: 0.6, w: 0.6}
+  SpotLightDirection: {x: 0, y: -1, z: 0, w: 0}
+  SpotLightPosition: {x: 0, y: 5, z: 0, w: 0}
+  SpotLightApertura: 50
+  PointLightColor: {x: 1, y: 1, z: 1, w: 0}
+  PointLightPosition: {x: 0, y: 5, z: 0, w: 0}
+  objetivosOrbitales:
+  - {fileID: 1009128751}
+  - {fileID: 1371453722}
+  - {fileID: 92047935}
+  - {fileID: 1590486117}
+  - {fileID: 960289237}
+  - {fileID: 492139609}
+  - {fileID: 359847414}
+  - {fileID: 1608636865}
+  - {fileID: 1381168027}
+  - {fileID: 1023414620}
+  - {fileID: 30911869}
+  - {fileID: 1087907281}
+  - {fileID: 766572340}
+  - {fileID: 1764844907}
+  - {fileID: 138256405}
+  - {fileID: 1017537980}
+  - {fileID: 856905355}
+  - {fileID: 558898077}
+  - {fileID: 219515513}
+  - {fileID: 55454650}
+  - {fileID: 56255477}
+--- !u!4 &854367977
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 854367975}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &856905355 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e01193b0238cd63449ab9f8ee9955bb9, type: 3}
+  m_PrefabInstance: {fileID: 436198338}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &881935285
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -912,6 +1053,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7936024133847426488, guid: e01193b0238cd63449ab9f8ee9955bb9, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 8c125ecb0502064418eeb7c4b9c632c6, type: 2}
     - target: {fileID: 919132149155446097, guid: e01193b0238cd63449ab9f8ee9955bb9, type: 3}
       propertyPath: m_Name
       value: Tetera-Blinn-Phong-Metal
@@ -921,6 +1066,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e01193b0238cd63449ab9f8ee9955bb9, type: 3}
+--- !u!1 &960289237 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e01193b0238cd63449ab9f8ee9955bb9, type: 3}
+  m_PrefabInstance: {fileID: 2081207611}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -1013,6 +1163,36 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1009128751 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e01193b0238cd63449ab9f8ee9955bb9, type: 3}
+  m_PrefabInstance: {fileID: 2124131106}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1017537980 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e01193b0238cd63449ab9f8ee9955bb9, type: 3}
+  m_PrefabInstance: {fileID: 1631406291}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1023414620 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e01193b0238cd63449ab9f8ee9955bb9, type: 3}
+  m_PrefabInstance: {fileID: 1418451131}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1087907281 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e01193b0238cd63449ab9f8ee9955bb9, type: 3}
+  m_PrefabInstance: {fileID: 1704379574}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1371453722 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e01193b0238cd63449ab9f8ee9955bb9, type: 3}
+  m_PrefabInstance: {fileID: 1383364676}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1381168027 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e01193b0238cd63449ab9f8ee9955bb9, type: 3}
+  m_PrefabInstance: {fileID: 153296233}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1383364676
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1073,6 +1253,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7936024133847426488, guid: e01193b0238cd63449ab9f8ee9955bb9, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 063906638cb2b4e4cacd50ec38d79dbf, type: 2}
     - target: {fileID: 919132149155446097, guid: e01193b0238cd63449ab9f8ee9955bb9, type: 3}
       propertyPath: m_Name
       value: Tetera-Blinn-Phong-Plastico
@@ -1325,6 +1509,16 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e01193b0238cd63449ab9f8ee9955bb9, type: 3}
+--- !u!1 &1590486117 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e01193b0238cd63449ab9f8ee9955bb9, type: 3}
+  m_PrefabInstance: {fileID: 764826416}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1608636865 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e01193b0238cd63449ab9f8ee9955bb9, type: 3}
+  m_PrefabInstance: {fileID: 1514392463}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1631406291
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1734,6 +1928,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7936024133847426488, guid: e01193b0238cd63449ab9f8ee9955bb9, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: e1d379fb9e0dc6742af8d1021a0bfc66, type: 2}
     - target: {fileID: 919132149155446097, guid: e01193b0238cd63449ab9f8ee9955bb9, type: 3}
       propertyPath: m_Name
       value: Tetera-Blinn-Phong-Propio
@@ -1743,6 +1941,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e01193b0238cd63449ab9f8ee9955bb9, type: 3}
+--- !u!1 &1764844907 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: e01193b0238cd63449ab9f8ee9955bb9, type: 3}
+  m_PrefabInstance: {fileID: 153131332}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1834300845
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1803,6 +2006,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7936024133847426488, guid: e01193b0238cd63449ab9f8ee9955bb9, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 7b3a57a431e88a44f91111c062ae5146, type: 2}
     - target: {fileID: 919132149155446097, guid: e01193b0238cd63449ab9f8ee9955bb9, type: 3}
       propertyPath: m_Name
       value: Tetera-Blinn-Phong-Multitextura
@@ -1953,6 +2160,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7936024133847426488, guid: e01193b0238cd63449ab9f8ee9955bb9, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: df84236bd103df54cab610fe65a0f888, type: 2}
     - target: {fileID: 919132149155446097, guid: e01193b0238cd63449ab9f8ee9955bb9, type: 3}
       propertyPath: m_Name
       value: Tetera-Blinn-Phong-Procedural
@@ -2022,6 +2233,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7936024133847426488, guid: e01193b0238cd63449ab9f8ee9955bb9, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 52c9c33f65deb32408511a55b9514a0a, type: 2}
     - target: {fileID: 764220876610305960, guid: e01193b0238cd63449ab9f8ee9955bb9, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.1
@@ -2071,3 +2286,4 @@ SceneRoots:
   - {fileID: 1709349742}
   - {fileID: 208571012}
   - {fileID: 215358026}
+  - {fileID: 854367977}

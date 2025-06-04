@@ -254,7 +254,7 @@ PrefabInstance:
     - target: {fileID: -7635826562936255635, guid: 59a5006b4f4210b45ad9052df8ec28ef, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 67a0a0af1e0c8ab448cc8cf15fccc813, type: 2}
+      objectReference: {fileID: 2100000, guid: e1d379fb9e0dc6742af8d1021a0bfc66, type: 2}
     - target: {fileID: 919132149155446097, guid: 59a5006b4f4210b45ad9052df8ec28ef, type: 3}
       propertyPath: m_Name
       value: Muebles Cocina
@@ -490,6 +490,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7936024133847426488, guid: e01193b0238cd63449ab9f8ee9955bb9, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: df84236bd103df54cab610fe65a0f888, type: 2}
     - target: {fileID: 919132149155446097, guid: e01193b0238cd63449ab9f8ee9955bb9, type: 3}
       propertyPath: m_Name
       value: Tetera
@@ -574,6 +578,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 95393a07e6419b74388722d101f5bc76, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 52c9c33f65deb32408511a55b9514a0a, type: 2}
     - target: {fileID: 919132149155446097, guid: 95393a07e6419b74388722d101f5bc76, type: 3}
       propertyPath: m_Name
       value: Vasija
@@ -646,7 +654,7 @@ PrefabInstance:
     - target: {fileID: -3477821731311062464, guid: 96792e6185573de48996c26fc5281553, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: a8bd22a18a1e9c444ba97af99621e5f4, type: 2}
+      objectReference: {fileID: 2100000, guid: 2332e064e8377cb46906d3de8d369820, type: 2}
     - target: {fileID: -1757468907444018348, guid: 96792e6185573de48996c26fc5281553, type: 3}
       propertyPath: m_LocalPosition.z
       value: 15.6
@@ -925,6 +933,9 @@ MonoBehaviour:
   SpotLightApertura: 0
   PointLightColor: {x: 0, y: 0, z: 0, w: 0}
   PointLightPosition: {x: 0, y: 0, z: 0, w: 0}
+  spotActiva: 1
+  dirActiva: 1
+  pointActiva: 1
   moveSpeed: 5
   mouseSensitivity: 2
   objetivosOrbitales:
@@ -1089,7 +1100,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 67a0a0af1e0c8ab448cc8cf15fccc813, type: 2}
+  - {fileID: 2100000, guid: 7b3a57a431e88a44f91111c062ae5146, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
