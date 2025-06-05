@@ -32,11 +32,9 @@ Shader "Practica/Blinn-Phong-Multitextura"
         _AmbientLight ("Ambient Light", Color) = (0.2, 0.2, 0.2, 1)
 
         //Texturas
+        [NoScaleOffset] _TextC ("Texture cambio", 2D) = "white" {}
         [NoScaleOffset] _Text1 ("Texture1", 2D) = "white" {}
         [NoScaleOffset] _Text2 ("Texture2", 2D) = "white" {}
-        _IntencidadText1  ("Textura1 Intencidad", Range(0.0,1)) = 0.5
-        _IntencidadText2  ("Textura2 Intencidad", Range(0.0,1)) = 0.5
-
     }
 
     SubShader
@@ -78,8 +76,7 @@ Shader "Practica/Blinn-Phong-Multitextura"
             //Texturas
             sampler2D _Text1;
             sampler2D _Text2;
-            float _IntencidadText1;
-            float _IntencidadText2;
+            sampler2D _TextC;
 
             // Luz ambiental
             float4 _AmbientLight;
@@ -115,16 +112,14 @@ Shader "Practica/Blinn-Phong-Multitextura"
             {
                 float3 N = normalize(f.normal);
                 float3 V = normalize(_CameraPosition_w.xyz - f.position_w);
-                float3 col1 = 0;
-                float3 col2 = 0;
+             
                 float3 col = 0;
-                col1.rgb = tex2D(_Text1, f.uv); 
-                col2.rgb = tex2D(_Text2, f.uv);
-                col.rgb = col1.rgb*_IntencidadText1 + col2.rgb *_IntencidadText2 ;
+                float3  unos = (1,1,1);
+                col.rgb = tex2D(_Text1, f.uv).rgb * tex2D(_TextC, f.uv).rgb  + tex2D(_Text2, f.uv).rgb * (unos - tex2D(_TextC, f.uv).rgb);
 
                 // Luz direccional
                 float3 dirLight = 0;
-                if(_DirActiva == 1)
+                if(_DirActiva > 0.5)
                 {
                     float3 L1 = normalize(-_DirLightDirection.xyz);
                     float NdotL1 = max(0, dot(N, L1));
@@ -135,7 +130,7 @@ Shader "Practica/Blinn-Phong-Multitextura"
                 }
                 //Luz puntual
                 float3 pointLight = 0;
-                if(_PointActiva == 1)
+                if(_PointActiva > 0.5)
                 {
                     float3 toPoint = _PointLightPosition.xyz - f.position_w;
                     float3 L2 = normalize(toPoint);
@@ -149,7 +144,7 @@ Shader "Practica/Blinn-Phong-Multitextura"
                 }
                 // Luz spot
                 float3 spotLight = 0;
-                if(_SpotActiva == 1)
+                if(_SpotActiva > 0.5)
                 {
                     float3 L3 = normalize(_SpotLightPosition.xyz - f.position_w);
                     float3 spotDir = normalize(-_SpotLightDirection.xyz);

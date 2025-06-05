@@ -120,7 +120,7 @@ Shader "Practica/Blinn-Phong-Textura Procedural"
 
                  // Luz direccional
                 float3 dirLight = 0;
-                if(_DirActiva == 1)
+                if(_DirActiva > 0.5)
                 {
                     float3 L1 = normalize(-_DirLightDirection.xyz);
                     float NdotL1 = max(0, dot(N, L1));
@@ -131,7 +131,7 @@ Shader "Practica/Blinn-Phong-Textura Procedural"
                 }
                 //Luz puntual
                 float3 pointLight = 0;
-                if(_PointActiva == 1)
+                if(_PointActiva > 0.5)
                 {
                     float3 toPoint = _PointLightPosition.xyz - f.position_w;
                     float3 L2 = normalize(toPoint);
@@ -145,7 +145,7 @@ Shader "Practica/Blinn-Phong-Textura Procedural"
                 }
                 // Luz spot
                 float3 spotLight = 0;
-                if(_SpotActiva == 1)
+                if(_SpotActiva > 0.5)
                 {
                     float3 L3 = normalize(_SpotLightPosition.xyz - f.position_w);
                     float3 spotDir = normalize(-_SpotLightDirection.xyz);

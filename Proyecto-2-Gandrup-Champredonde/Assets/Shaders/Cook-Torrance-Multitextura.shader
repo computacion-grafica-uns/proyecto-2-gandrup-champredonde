@@ -31,9 +31,10 @@ Shader "Custom/Cook-Torrance-Multitextura"
         // Luz ambiental
         _AmbientLight ("Ambient Light", Color) = (0.2, 0.2, 0.2, 1)
 
-        // Textura
-        [NoScaleOffset] _Tex1 ("Texture1", 2D) = "white" {}
-        [NoScaleOffset] _Tex2 ("Texture2", 2D) = "black" {} 
+        // Texturas
+        [NoScaleOffset] _TextC ("Texture cambio", 2D) = "white" {}
+        [NoScaleOffset] _Text1 ("Texture1", 2D) = "white" {}
+        [NoScaleOffset] _Text2 ("Texture2", 2D) = "white" {}
     }
 
     SubShader
@@ -68,8 +69,9 @@ Shader "Custom/Cook-Torrance-Multitextura"
             float _Roughness;
 
             // Textura
-            sampler2D _Tex1;
-            sampler2D _Tex2;
+            sampler2D _Text1;
+            sampler2D _Text2;
+            sampler2D _TextC;
 
             // Camara
             float4 _CameraPosition_w;
@@ -146,7 +148,8 @@ Shader "Custom/Cook-Torrance-Multitextura"
                 float3 ambient = _AmbientLight.rgb * _MaterialKa.rgb;
 
                 float3 text = 0;
-                text.rgb = tex2D(_Tex1, f.uv) + tex2D(_Tex2, f.uv);
+                float3 unos = (1,1,1);
+                text.rgb = tex2D(_Text1, f.uv).rgb * tex2D(_TextC, f.uv).rgb  + tex2D(_Text2, f.uv).rgb * (unos - tex2D(_TextC, f.uv).rgb);
 
                 // Luz direccional
                 float dirLight = 0;

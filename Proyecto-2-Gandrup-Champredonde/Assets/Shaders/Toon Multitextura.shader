@@ -7,9 +7,10 @@ Shader "Practica/Toon-Multitextura"
         _MaterialKs ("Specular", Color) = (1, 1, 1, 1)
         _Roughness ("Roughness", Range(0.05, 1)) = 0.5
 
-        // Textura
-        [NoScaleOffset] _Tex1 ("Texture 1", 2D) = "white" {}
-        [NoScaleOffset] _Tex2 ("Texture 2", 2D) = "black" {}
+        //Texturas
+        [NoScaleOffset] _TextC ("Texture cambio", 2D) = "white" {}
+        [NoScaleOffset] _Text1 ("Texture1", 2D) = "white" {}
+        [NoScaleOffset] _Text2 ("Texture2", 2D) = "white" {}
 
         // Cámara
         _CameraPosition_w ("Camera Position", Vector) = (0,0,0,1)
@@ -61,7 +62,7 @@ Shader "Practica/Toon-Multitextura"
             float4 _MaterialKa, _MaterialKs;
             float _Roughness;
             float4 _CameraPosition_w;
-            sampler2D _Tex1 , _Tex2;
+            sampler2D _Text1 , _Text2, _TextC;
 
             // Luz ambiental
             float4 _AmbientLight;
@@ -101,7 +102,8 @@ Shader "Practica/Toon-Multitextura"
             {
                 float3 N = normalize(f.normal);
                 float3 V = normalize(_CameraPosition_w.xyz - f.worldPos);
-                float3 texColor = tex2D(_Tex1, f.uv).rgb + tex2D(_Tex2, f.uv).rgb;
+                float3 unos = (1,1,1);
+                float3 texColor = tex2D(_Text1, f.uv).rgb * tex2D(_TextC, f.uv).rgb  + tex2D(_Text2, f.uv).rgb * (unos - tex2D(_TextC, f.uv).rgb);
                 float roughness = _Roughness;
 
                 float3 ambient = _AmbientLight.rgb * _MaterialKa.rgb;

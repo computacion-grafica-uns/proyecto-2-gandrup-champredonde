@@ -13,16 +13,19 @@ Shader "Practica/Blinn-Phong-Textura2D"
         // Luz direccional
         _DirLightDirection ("Directional Light Direction", Vector) = (0, -1, 0, 0)
         _DirLightColor ("Directional Light Color", Color) = (1,1,1,1)
+        _DirActiva ("Directional Light Activa",Float) = 1
 
         // Luz puntual
         _PointLightPosition ("Point Light Position", Vector) = (0, 2, 0, 1)
         _PointLightColor ("Point Light Color", Color) = (1, 0, 0, 1)
+        _PointActiva ("Point Light Activa", Float) = 1
 
         // Luz spot
         _SpotLightPosition ("Spot Light Position", Vector) = (0, 3, 0, 1)
         _SpotLightDirection ("Spot Light Direction", Vector) = (0, -1, 0, 0)
         _SpotLightColor ("Spot Light Color", Color) = (0, 0, 1, 1)
         _SpotLightApertura ("Spot Light Apertura", Range(0.0, 90)) = 30
+        _SpotActiva("Spot Light", Float) = 1
 
         // Luz ambiental
         _AmbientLight ("Ambient Light", Color) = (0.2, 0.2, 0.2, 1)
@@ -76,16 +79,19 @@ Shader "Practica/Blinn-Phong-Textura2D"
             // Direccional
             float4 _DirLightDirection;
             float4 _DirLightColor;
+            float _DirActiva;
 
             // Puntual
             float4 _PointLightPosition;
             float4 _PointLightColor;
+            float _PointActiva;
 
             // Spot
             float4 _SpotLightPosition;
             float4 _SpotLightDirection;
             float4 _SpotLightColor;
             float _SpotLightApertura;
+            float _SpotActiva;
 
             v2f vert (appdata v)
             {
@@ -105,37 +111,46 @@ Shader "Practica/Blinn-Phong-Textura2D"
                 col.rgb = tex2D(_MainTex, f.uv);
 
                 // Luz direccional
-                float3 L1 = normalize(-_DirLightDirection.xyz);
-                float NdotL1 = max(0, dot(N, L1));
-                float3 H1 = normalize(L1 + V);
-                float3 spec1 = pow(max(dot(N, H1), 0.0), _Material_n) * _MaterialKs.rgb;
-                float3 diff1 = NdotL1 * col.rgb;
-                float3 dirLight = _DirLightColor.rgb * (diff1 + spec1) ;
-
-                //Luz puntual
-                float3 toPoint = _PointLightPosition.xyz - f.position_w;
-                float3 L2 = normalize(toPoint);
-                float dist = length(toPoint);
-                float atten = 1.0 / (1.0 + dist); // Atenuación simple
-                float NdotL2 = max(0, dot(N, L2));
-                float3 H2 = normalize(L2 + V);
-                float3 spec2 = pow(max(dot(N, H2), 0.0), _Material_n) * _MaterialKs.rgb;
-                float3 diff2 = NdotL2 * col.rgb;
-                float3 pointLight = _PointLightColor.rgb * atten * (diff2 + spec2);
-
-                // Luz spot
-                float3 L3 = normalize(_SpotLightPosition.xyz - f.position_w);
-                float3 spotDir = normalize(-_SpotLightDirection.xyz);
-                float angle = acos(dot(L3, spotDir));
-                float3 spotLight = 0;
-
-                if (angle < radians(_SpotLightApertura))
+                float3 dirLight = 0;
+                if(_DirActiva > 0.5)
                 {
-                    float NdotL3 = max(0, dot(N, L3));
-                    float3 H3 = normalize(L3 + V);
-                    float3 spec3 = pow(max(dot(N, H3), 0.0), _Material_n) * _MaterialKs.rgb;
-                    float3 diff3 = NdotL3 * col.rgb;
-                    spotLight = _SpotLightColor.rgb * (diff3+  spec3);
+                    float3 L1 = normalize(-_DirLightDirection.xyz);
+                    float NdotL1 = max(0, dot(N, L1));
+                    float3 H1 = normalize(L1 + V);
+                    float3 spec1 = pow(max(dot(N, H1), 0.0), _Material_n) * _MaterialKs.rgb;
+                    float3 diff1 = NdotL1 * col.rgb;
+                    dirLight = _DirLightColor.rgb * (diff1 + spec1) ;
+                }
+                //Luz puntual
+                float3 pointLight = 0;
+                if(_PointActiva > 0.5)
+                {
+                    float3 toPoint = _PointLightPosition.xyz - f.position_w;
+                    float3 L2 = normalize(toPoint);
+                    float dist = length(toPoint);
+                    float atten = 1.0 / (1.0 + dist); // Atenuación simple
+                    float NdotL2 = max(0, dot(N, L2));
+                    float3 H2 = normalize(L2 + V);
+                    float3 spec2 = pow(max(dot(N, H2), 0.0), _Material_n) * _MaterialKs.rgb;
+                    float3 diff2 = NdotL2 * col.rgb;
+                    pointLight = _PointLightColor.rgb * atten * (diff2 + spec2);
+                }
+                // Luz spot
+                float3 spotLight = 0;
+                if(_SpotActiva > 0.5)
+                {
+                    float3 L3 = normalize(_SpotLightPosition.xyz - f.position_w);
+                    float3 spotDir = normalize(-_SpotLightDirection.xyz);
+                    float angle = acos(dot(L3, spotDir));
+
+                    if (angle < radians(_SpotLightApertura))
+                    {
+                        float NdotL3 = max(0, dot(N, L3));
+                        float3 H3 = normalize(L3 + V);
+                        float3 spec3 = pow(max(dot(N, H3), 0.0), _Material_n) * _MaterialKs.rgb;
+                        float3 diff3 = NdotL3 * col.rgb;
+                        spotLight = _SpotLightColor.rgb * (diff3+  spec3);
+                    }
                 }
 
                 //Luz ambiental

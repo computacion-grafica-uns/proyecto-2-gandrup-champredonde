@@ -85,9 +85,6 @@ Shader "Practica/Blinn-Phong"
             float4 _SpotLightColor;
             float _SpotLightApertura;
             float _SpotActiva;
-            
-            //Textura
-            sampler2D _MainTex;
 
             v2f vert (appdata v)
             {
@@ -115,7 +112,7 @@ Shader "Practica/Blinn-Phong"
                 }
                 //Luz puntual
                 float3 pointLight = 0;
-                if(_PointActiva == 1)
+                if(_PointActiva > 0.5)
                 {
                     float3 toPoint = _PointLightPosition.xyz - f.position_w;
                     float3 L2 = normalize(toPoint);
@@ -128,7 +125,7 @@ Shader "Practica/Blinn-Phong"
                 }
                 // Luz spot
                 float3 spotLight = 0;
-                if(_SpotActiva == 1)
+                if(_SpotActiva > 0.5)
                 {
                     float3 L3 = normalize(_SpotLightPosition.xyz - f.position_w);
                     float3 spotDir = normalize(-_SpotLightDirection.xyz);
