@@ -143,7 +143,7 @@ public class LigthManagerEscenaB : MonoBehaviour
     {
         camPP = new GameObject("FPSCamera");
         camPP.tag = "MainCamera";
-        camPP.transform.position = new Vector3(0, 1.6f, 0);
+        camPP.transform.position = new Vector3(0, 7, 0);
         camPP.AddComponent<Camera>();
         if (camPP.GetComponent<AudioListener>() == null)
             camPP.AddComponent<AudioListener>();
@@ -154,7 +154,7 @@ public class LigthManagerEscenaB : MonoBehaviour
     {
         // Crear objeto target al que orbitamos
         targetOrbital = new GameObject("TargetOrbital");
-        targetOrbital.transform.position = new Vector3(0, 1, 0);
+        targetOrbital.transform.position = new Vector3(0, 7, 0);
 
         // Crear la cámara orbital
         camOrbital = new GameObject("CameraOrbital");

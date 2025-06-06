@@ -102,13 +102,13 @@ Shader "Practica/Blinn-Phong"
 
                 // Luz direccional
                 float3 dirLight = 0;
-                if(_DirActiva == 1)
+                if(_DirActiva > 0.5)
                 {
                     float3 L1 = normalize(-_DirLightDirection.xyz);
                     float NdotL1 = max(0, dot(N, L1));
                     float3 H1 = normalize(L1 + V);
                     float spec1 = pow(max(dot(N, H1), 0.0), _Material_n);
-                    float3 dirLight = (_DirLightColor.rgb * (NdotL1 * _MaterialKd.rgb + spec1 * _MaterialKs.rgb));
+                    dirLight = (_DirLightColor.rgb * (NdotL1 * _MaterialKd.rgb + spec1 * _MaterialKs.rgb));
                 }
                 //Luz puntual
                 float3 pointLight = 0;

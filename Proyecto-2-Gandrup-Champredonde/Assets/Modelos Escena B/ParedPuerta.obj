@@ -1,0 +1,47 @@
+# Pared con hueco para puerta (0.8 x 2.0)
+# Espesor pared: 0.1
+
+# --- Frontal exterior ---
+v -1.25 0.0 0.0
+v -1.25 3.0 0.0
+v  1.25 3.0 0.0
+v  1.25 0.0 0.0
+
+v -0.4 0.0 0.0
+v -0.4 2.0 0.0
+v  0.4 2.0 0.0
+v  0.4 0.0 0.0
+
+# --- Trasero exterior ---
+v -1.25 0.0 -0.1
+v -1.25 3.0 -0.1
+v  1.25 3.0 -0.1
+v  1.25 0.0 -0.1
+
+v -0.4 0.0 -0.1
+v -0.4 2.0 -0.1
+v  0.4 2.0 -0.1
+v  0.4 0.0 -0.1
+
+# --- Caras externas (pared sin hueco) ---
+f 1 2 6 5
+f 2 3 7 6
+f 3 4 8 7
+f 4 1 5 8
+
+f 9 13 14 10
+f 10 14 15 11
+f 11 15 16 12
+f 12 16 13 9
+
+# --- Interior hueco de puerta ---
+f 5 6 14 13
+f 6 7 15 14
+f 7 8 16 15
+f 8 5 13 16
+
+# --- Laterales externos de la pared ---
+f 1 9 10 2
+f 2 10 11 3
+f 3 11 12 4
+f 4 12 9 1
